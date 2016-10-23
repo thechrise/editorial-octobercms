@@ -1,3 +1,7 @@
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog"
 ==
 <nav id="menu">
 									<header class="major">
@@ -8,12 +12,15 @@
 										<li><a href="{{ 'generic'|page }}">Generic</a></li>
 										<li><a href="{{ 'elements'|page }}">Elements</a></li>
 										<li>
-											<span class="opener">Submenu</span>
+											<span class="opener">Blog</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+												<li><a href="{{ 'elements'|page }}">All Posts</a></li>
+												{% if blogCategories.categories %}
+                                                    {% partial blogCategories ~ "::items"
+                                                    categories = blogCategories.categories
+                                                    currentCategorySlug = blogCategories.currentCategorySlug
+                                                    %}
+                                                {% endif %}
 											</ul>
 										</li>
 										<li><a href="#">Etiam Dolore</a></li>
