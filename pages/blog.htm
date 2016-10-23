@@ -1,0 +1,18 @@
+title = "Blog"
+url = "/blog"
+layout = "generic"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "single-post"
+==
+<header class="main">
+    <h1>{{this.page.title}}</h1>
+</header>
+
+{% component 'blogPosts' %}

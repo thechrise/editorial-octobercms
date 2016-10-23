@@ -1,0 +1,16 @@
+title = "Single Post"
+url = "/blog/:slug"
+layout = "generic"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog"
+==
+<header class="main">
+	<h1>Generic</h1>
+</header>
+
+<span class="image main"><img src="{{ 'assets/images/pic11.jpg'|theme}}" alt="" /></span>
+
+{% component 'blogPost' %}
